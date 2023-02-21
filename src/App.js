@@ -6,9 +6,9 @@ import { useState } from 'react';
 
 function App() {
 
-  let post = '강남 우동 맛집';
-  let[글제목,글제목변경] = useState(['남자 코트 추천','강남 우동 맛집','파이썬독학']);
-  let[따봉,따봉변경] = useState(0)
+  let post = '강남 우동 맛집'; // 자료 잠깐 저장할 땐 변수
+  let [글제목,b] =  useState('남자 코트 추천')
+  
 
   function 함수(){
     console.log(1);
@@ -16,9 +16,13 @@ function App() {
   return (
     <div className="App">
       <div className="black-nav">
-        <h4>난 블로그임</h4>
+        <h4>ReactBlog</h4>
       </div >
-      <h4>{post}</h4>
+      <div className='list'>
+        <h4>{글제목}</h4>
+        <p>2월 17일 발행</p>
+      </div>
+      
     </div>
   );
 }
