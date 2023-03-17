@@ -34,27 +34,12 @@ function App() {
         );
       })}
 
-      <button
-        onClick={() => {
-          setTitle(0);
+      <input
+        type="text"
+        onChange={(e) => {
+          console.log(e.target.value);
         }}
-      >
-        글제목0
-      </button>
-      <button
-        onClick={() => {
-          setTitle(1);
-        }}
-      >
-        글제목1
-      </button>
-      <button
-        onClick={() => {
-          setTitle(2);
-        }}
-      >
-        글제목2
-      </button>
+      />
 
       {modal == true ? (
         <Modal title={title} 글제목변경={글제목변경} 글제목={글제목} />
