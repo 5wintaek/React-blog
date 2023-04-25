@@ -4,7 +4,7 @@ export function Header() {
   return (
     <Container>
       <header>
-        <h4>블로그임</h4>
+        <h4>Velog</h4>
       </header>
     </Container>
   );
