@@ -1,13 +1,13 @@
 /*eslint-disable*/
 import './styles/App.css'; // 경로 import 해야함
-import { Header } from '@/components';
-import { Category } from './components/Category/Category';
+import { Header, Category, Modal } from '@/components';
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Category />
+      <Modal />
     </div>
   );
 }
