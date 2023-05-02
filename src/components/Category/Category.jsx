@@ -1,10 +1,14 @@
 import { useState } from 'react';
-import { Button } from '@/components';
+import { Button, Modal } from '@/components';
 import styled from 'styled-components';
 
 export function Category() {
   const post = '글제목';
   const [글제목, 글제목변경] = useState(['옷브랜드 ', '바지브랜드 ', '가방브랜드']);
+  const [isModal, setModal] = useState(false);
+  const openModal = () => {
+    setModal(!isModal);
+  };
 
   return (
     <div>
@@ -38,9 +42,10 @@ export function Category() {
         <p>2월 18일발행</p>
       </List>
       <List>
-        <h4>{글제목[2]}</h4>
+        <h4 onClick={openModal}>{글제목[2]}</h4>
         <p>2월 19일발행</p>
       </List>
+      {isModal === true ? <Modal /> : null}
     </div>
   );
 }
