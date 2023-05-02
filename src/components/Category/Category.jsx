@@ -49,13 +49,14 @@ export function Category() {
       {글제목.map((a, i) => {
         return (
           <List key={i}>
-            <h4>
+            <h4 onClick={openModal}>
               {글제목[i]} <Button />
             </h4>
             <p>2월 18일발행</p>
           </List>
         );
       })}
+      {isModal === true ? <Modal 글제목변경={글제목변경} 글제목={글제목} /> : false}
     </div>
   );
 }
