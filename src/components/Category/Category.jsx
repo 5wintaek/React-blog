@@ -12,7 +12,7 @@ export function Category() {
 
   return (
     <div>
-      <List>
+      {/* <List>
         <button
           onClick={() => {
             let copy = [...글제목];
@@ -45,7 +45,17 @@ export function Category() {
         <h4 onClick={openModal}>{글제목[2]}</h4>
         <p>2월 19일발행</p>
       </List>
-      {isModal === true ? <Modal /> : null}
+      {isModal === true ? <Modal /> : false} */}
+      {글제목.map((a, i) => {
+        return (
+          <List key={i}>
+            <h4>
+              {글제목[i]} <Button />
+            </h4>
+            <p>2월 18일발행</p>
+          </List>
+        );
+      })}
     </div>
   );
 }
