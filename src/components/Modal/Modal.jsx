@@ -1,12 +1,14 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 
 export function Modal(props) {
   const isChange = () => {
     return props.글제목변경(['남자반팔추천', '바지브랜드', '가방브랜드']);
   };
+
   return (
     <Container background={'yellow'}>
-      <h4>{props.글제목[0]}</h4>
+      <h4>{props.글제목[props.title]}</h4>
       <p>날짜</p>
       <p>상세내용</p>
       <button onClick={isChange}>글수정</button>
