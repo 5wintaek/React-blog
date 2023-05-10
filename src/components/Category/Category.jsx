@@ -7,58 +7,14 @@ export function Category() {
   const [글제목, 글제목변경] = useState(['옷브랜드 ', '바지브랜드 ', '가방브랜드']);
   const [isModal, setModal] = useState(false);
   const [title, setTitle] = useState(0);
-  const openModal = () => {
+  const [value, setValue] = useState('');
+  const openModal = (i) => {
     setModal(!isModal);
-    setTitle(1);
+    setTitle(i);
   };
-
-  // {글제목.map((a, i) => {
-  //   return (
-  //     <List key={i}>
-  //       <h4 onClick={openModal}>
-  //         {글제목[i]} <Button />
-  //       </h4>
-  //       <p>2월 18일발행</p>
-  //     </List>
-  //   );
-  // })}
 
   return (
     <div>
-      {/* <List>
-        <button
-          onClick={() => {
-            let copy = [...글제목];
-            copy[0] = '바꼈냐?';
-            글제목변경(copy);
-          }}
-        >
-          글수정
-        </button>
-        <button
-          onClick={() => {
-            let copy = [...글제목];
-            copy.sort((a, b) => (a > b ? 1 : -1)); // string으로 sort 시 사용되는 문법
-
-            글제목변경(copy);
-          }}
-        >
-          가나다순정렬
-        </button>
-        <h4>
-          {글제목[0]} <Button></Button>
-        </h4>
-        <p>2월17일 발행</p>
-      </List>
-      <List>
-        <h4>{글제목[1]}</h4>
-        <p>2월 18일발행</p>
-      </List>
-      <List>
-        <h4 onClick={openModal}>{글제목[2]}</h4>
-        <p>2월 19일발행</p>
-      </List>
-      {isModal === true ? <Modal /> : false} */}
       {글제목.map((a, i) => {
         return (
           <List key={i}>
@@ -69,6 +25,13 @@ export function Category() {
           </List>
         );
       })}
+
+      <input
+        onChange={(e) => {
+          setValue(e.target.value);
+          console.log(value);
+        }}
+      />
 
       {isModal === true ? <Modal title={title} 글제목변경={글제목변경} 글제목={글제목} /> : false}
     </div>
