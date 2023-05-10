@@ -22,6 +22,15 @@ export function Category() {
               {글제목[i]} <Button />
             </h4>
             <p>2월 18일발행</p>
+            <button
+              onClick={() => {
+                let copy = [...글제목];
+                copy.splice(i, 1);
+                글제목변경(copy);
+              }}
+            >
+              삭제
+            </button>
           </List>
         );
       })}
@@ -32,6 +41,15 @@ export function Category() {
           console.log(value);
         }}
       />
+      <button
+        onClick={() => {
+          let copy = [...글제목];
+          copy.unshift(value);
+          글제목변경(copy);
+        }}
+      >
+        글발행
+      </button>
 
       {isModal === true ? <Modal title={title} 글제목변경={글제목변경} 글제목={글제목} /> : false}
     </div>
