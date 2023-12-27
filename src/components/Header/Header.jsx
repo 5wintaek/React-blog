@@ -5,6 +5,7 @@ export function Header() {
     <Container>
       <header>
         <h4>Velog</h4>
+        <h2>Test</h2>
       </header>
     </Container>
   );
