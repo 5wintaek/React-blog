@@ -5,8 +5,7 @@ import { Header, Category, Modal } from '@/components';
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Category />
+      <h1>Test</h1>
     </div>
   );
 }
